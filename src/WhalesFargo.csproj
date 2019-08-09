@@ -5,7 +5,7 @@
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{8CC867BF-9384-41B8-B7DC-17B82E790DC1}</ProjectGuid>
-    <OutputType>WinExe</OutputType>
+    <OutputType>Exe</OutputType>
     <RootNamespace>WhalesFargo</RootNamespace>
     <AssemblyName>WhalesFargo</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
@@ -30,8 +30,6 @@
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
     <BootstrapperEnabled>true</BootstrapperEnabled>
-    <NuGetPackageImportStamp>
-    </NuGetPackageImportStamp>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -42,8 +40,6 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
-    <Prefer32Bit>true</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -53,8 +49,6 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <Prefer32Bit>true</Prefer32Bit>
-    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
   </PropertyGroup>
   <PropertyGroup>
     <ManifestCertificateThumbprint>065A50AA37BFE5AE6EF99951BCABC28D05E18840</ManifestCertificateThumbprint>
@@ -71,29 +65,24 @@
   <PropertyGroup>
     <ApplicationManifest>Properties\app.manifest</ApplicationManifest>
   </PropertyGroup>
-  <PropertyGroup>
-    <StartupObject />
-  </PropertyGroup>
-  <!-- Include References Here. -->
   <ItemGroup>
-    <Reference Include="netstandard" />
-    <Reference Include="Discord.Net.Commands, Version=1.0.2.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Discord.Net.Commands.1.0.2\lib\netstandard1.1\Discord.Net.Commands.dll</HintPath>
+    <Reference Include="Discord.Net.Commands, Version=2.1.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Discord.Net.Commands.2.1.1\lib\net46\Discord.Net.Commands.dll</HintPath>
     </Reference>
-    <Reference Include="Discord.Net.Core, Version=1.0.2.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Discord.Net.Core.1.0.2\lib\net45\Discord.Net.Core.dll</HintPath>
+    <Reference Include="Discord.Net.Core, Version=2.1.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Discord.Net.Core.2.1.1\lib\net46\Discord.Net.Core.dll</HintPath>
     </Reference>
-    <Reference Include="Discord.Net.Rest, Version=1.0.2.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Discord.Net.Rest.1.0.2\lib\net45\Discord.Net.Rest.dll</HintPath>
+    <Reference Include="Discord.Net.Rest, Version=2.1.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Discord.Net.Rest.2.1.1\lib\net46\Discord.Net.Rest.dll</HintPath>
     </Reference>
     <Reference Include="Discord.Net.Rpc, Version=1.0.2.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Discord.Net.Rpc.1.0.2\lib\net45\Discord.Net.Rpc.dll</HintPath>
     </Reference>
-    <Reference Include="Discord.Net.Webhook, Version=1.0.2.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Discord.Net.Webhook.1.0.2\lib\netstandard1.1\Discord.Net.Webhook.dll</HintPath>
+    <Reference Include="Discord.Net.Webhook, Version=2.1.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Discord.Net.Webhook.2.1.1\lib\netstandard1.3\Discord.Net.Webhook.dll</HintPath>
     </Reference>
-    <Reference Include="Discord.Net.WebSocket, Version=1.0.2.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Discord.Net.WebSocket.1.0.2\lib\net45\Discord.Net.WebSocket.dll</HintPath>
+    <Reference Include="Discord.Net.WebSocket, Version=2.1.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Discord.Net.WebSocket.2.1.1\lib\net46\Discord.Net.WebSocket.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.Extensions.DependencyInjection, Version=2.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.Extensions.DependencyInjection.2.0.0\lib\netstandard2.0\Microsoft.Extensions.DependencyInjection.dll</HintPath>
@@ -111,21 +100,28 @@
     <Reference Include="System.AppContext, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>..\packages\System.AppContext.4.3.0\lib\net46\System.AppContext.dll</HintPath>
     </Reference>
-    <Reference Include="System.Collections.Immutable, Version=1.2.2.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
-      <HintPath>..\packages\System.Collections.Immutable.1.4.0\lib\netstandard2.0\System.Collections.Immutable.dll</HintPath>
-    </Reference>
-    <Reference Include="System.ComponentModel.Composition" />
-    <Reference Include="System.Console, Version=4.0.1.1, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
-      <HintPath>..\packages\System.Console.4.3.1\lib\net46\System.Console.dll</HintPath>
+    <Reference Include="System.Collections.Immutable, Version=1.2.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Collections.Immutable.1.3.1\lib\portable-net45+win8+wp8+wpa81\System.Collections.Immutable.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="System.ComponentModel.Composition" />
+    <Reference Include="System.Console, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Console.4.3.0\lib\net46\System.Console.dll</HintPath>
+    </Reference>
     <Reference Include="System.Core" />
-    <Reference Include="System.Diagnostics.DiagnosticSource, Version=4.0.2.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
-      <HintPath>..\packages\System.Diagnostics.DiagnosticSource.4.4.1\lib\net46\System.Diagnostics.DiagnosticSource.dll</HintPath>
+    <Reference Include="System.Diagnostics.DiagnosticSource, Version=4.0.1.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Diagnostics.DiagnosticSource.4.3.0\lib\net46\System.Diagnostics.DiagnosticSource.dll</HintPath>
     </Reference>
     <Reference Include="System.Drawing" />
-    <Reference Include="System.Interactive.Async, Version=3.0.3000.0, Culture=neutral, PublicKeyToken=94bc3704cddfc263, processorArchitecture=MSIL">
-      <HintPath>..\packages\System.Interactive.Async.3.1.1\lib\net46\System.Interactive.Async.dll</HintPath>
+    <Reference Include="System.Drawing.Primitives">
+      <HintPath>..\packages\System.Drawing.Primitives.4.3.0\lib\net45\System.Drawing.Primitives.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Globalization.Calendars, Version=4.0.2.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Globalization.Calendars.4.3.0\lib\net46\System.Globalization.Calendars.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Interactive.Async, Version=3.2.0.0, Culture=neutral, PublicKeyToken=94bc3704cddfc263, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Interactive.Async.3.2.0\lib\net46\System.Interactive.Async.dll</HintPath>
     </Reference>
     <Reference Include="System.IO.Compression, Version=4.1.2.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\System.IO.Compression.4.3.0\lib\net46\System.IO.Compression.dll</HintPath>
@@ -141,17 +137,19 @@
     <Reference Include="System.IO.FileSystem.Primitives, Version=4.0.2.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>..\packages\System.IO.FileSystem.Primitives.4.3.0\lib\net46\System.IO.FileSystem.Primitives.dll</HintPath>
     </Reference>
-    <Reference Include="System.Net.Http, Version=4.1.1.2, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
-      <HintPath>..\packages\System.Net.Http.4.3.3\lib\net46\System.Net.Http.dll</HintPath>
-      <Private>True</Private>
+    <Reference Include="System.Net.Http, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Net.Http.4.3.0\lib\net46\System.Net.Http.dll</HintPath>
     </Reference>
     <Reference Include="System.Net.Sockets, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Net.Sockets.4.3.0\lib\net46\System.Net.Sockets.dll</HintPath>
     </Reference>
     <Reference Include="System.Numerics" />
-    <Reference Include="System.Security.Cryptography.Algorithms, Version=4.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
-      <HintPath>..\packages\System.Security.Cryptography.Algorithms.4.3.1\lib\net461\System.Security.Cryptography.Algorithms.dll</HintPath>
+    <Reference Include="System.Runtime.InteropServices.RuntimeInformation, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.InteropServices.RuntimeInformation.4.3.0\lib\net45\System.Runtime.InteropServices.RuntimeInformation.dll</HintPath>
       <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.Algorithms, Version=4.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Cryptography.Algorithms.4.3.0\lib\net461\System.Security.Cryptography.Algorithms.dll</HintPath>
     </Reference>
     <Reference Include="System.Security.Cryptography.Encoding, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Security.Cryptography.Encoding.4.3.0\lib\net46\System.Security.Cryptography.Encoding.dll</HintPath>
@@ -159,48 +157,30 @@
     <Reference Include="System.Security.Cryptography.Primitives, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Security.Cryptography.Primitives.4.3.0\lib\net46\System.Security.Cryptography.Primitives.dll</HintPath>
     </Reference>
-    <Reference Include="System.Security.Cryptography.X509Certificates, Version=4.1.1.2, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
-      <HintPath>..\packages\System.Security.Cryptography.X509Certificates.4.3.2\lib\net461\System.Security.Cryptography.X509Certificates.dll</HintPath>
-      <Private>True</Private>
+    <Reference Include="System.Security.Cryptography.X509Certificates, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Cryptography.X509Certificates.4.3.0\lib\net461\System.Security.Cryptography.X509Certificates.dll</HintPath>
     </Reference>
-    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.ReaderWriter, Version=4.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Xml.ReaderWriter.4.3.0\lib\net46\System.Xml.ReaderWriter.dll</HintPath>
+    </Reference>
   </ItemGroup>
-  <!-- Include Files Here. -->
   <ItemGroup>
-    <Compile Include="DiscordBot.cs" />
     <Compile Include="Helpers\AudioDownloader.cs" />
     <Compile Include="Helpers\AudioFile.cs" />
-    <Compile Include="Helpers\AudioPlayer.cs" />
-    <Compile Include="Helpers\Strings.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Strings.resx</DependentUpon>
-    </Compile>
     <Compile Include="Helpers\Tools.cs" />
-    <Compile Include="Modules\AdminModule.cs" />
     <Compile Include="Modules\AudioModule.cs" />
-    <Compile Include="Modules\CustomModule.cs" />
-    <Compile Include="Services\AdminService.cs" />
     <Compile Include="Services\AudioService.cs" />
     <Compile Include="Modules\ChatModule.cs" />
     <Compile Include="Services\ChatService.cs" />
     <Compile Include="Modules\HelpModule.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Services\CustomService.cs" />
-    <Compile Include="UI\Window.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="UI\Window.Designer.cs">
-      <DependentUpon>Window.cs</DependentUpon>
-    </Compile>
   </ItemGroup>
-  <!-- Include Externals Here. -->
   <ItemGroup>
     <ContentWithTargetPath Include="Externals\ffmpeg.exe">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
@@ -230,29 +210,174 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <TargetPath>youtube-dl.exe</TargetPath>
     </ContentWithTargetPath>
+    <ContentWithTargetPath Include="BotToken.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <TargetPath>BotToken.txt</TargetPath>
+    </ContentWithTargetPath>
   </ItemGroup>
-  <!-- App Configuration -->
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
     <None Include="Properties\app.manifest" />
   </ItemGroup>
-  <!-- .Net Framework -->
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.6.1">
       <Visible>False</Visible>
       <ProductName>Microsoft .NET Framework 4.6.1 %28x86 and x64%29</ProductName>
       <Install>true</Install>
     </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Helpers\Strings.resx">
-      <Generator>PublicResXFileCodeGenerator</Generator>
-      <LastGenOutput>Strings.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UI\Window.resx">
-      <DependentUpon>Window.cs</DependentUpon>
-    </EmbeddedResource>
+    <Content Include="ChampBios\Aatrox.txt" />
+    <Content Include="ChampBios\Ahri.txt" />
+    <Content Include="ChampBios\Akali.txt" />
+    <Content Include="ChampBios\Alistair.txt" />
+    <Content Include="ChampBios\Amumu.txt" />
+    <Content Include="ChampBios\Anivia.txt" />
+    <Content Include="ChampBios\Annie.txt" />
+    <Content Include="ChampBios\Ashe.txt" />
+    <Content Include="ChampBios\AurelionSol.txt" />
+    <Content Include="ChampBios\Azir.txt" />
+    <Content Include="ChampBios\Bard.txt" />
+    <Content Include="ChampBios\Blitzcrank.txt" />
+    <Content Include="ChampBios\Brand.txt" />
+    <Content Include="ChampBios\Braum.txt" />
+    <Content Include="ChampBios\Caitlyn.txt" />
+    <Content Include="ChampBios\Camille.txt" />
+    <Content Include="ChampBios\Cassiopeia.txt" />
+    <Content Include="ChampBios\Cho%27Gath.txt" />
+    <Content Include="ChampBios\Corki.txt" />
+    <Content Include="ChampBios\Darius.txt" />
+    <Content Include="ChampBios\Diana.txt" />
+    <Content Include="ChampBios\Dr.Mundo.txt" />
+    <Content Include="ChampBios\Draven.txt" />
+    <Content Include="ChampBios\Ekko.txt" />
+    <Content Include="ChampBios\Elise.txt" />
+    <Content Include="ChampBios\Evelynn.txt" />
+    <Content Include="ChampBios\Ezreal.txt" />
+    <Content Include="ChampBios\Fiddlesticks.txt" />
+    <Content Include="ChampBios\Fiora.txt" />
+    <Content Include="ChampBios\Fizz.txt" />
+    <Content Include="ChampBios\Galio.txt" />
+    <Content Include="ChampBios\Gangplank.txt" />
+    <Content Include="ChampBios\Garen.txt" />
+    <Content Include="ChampBios\Gnar.txt" />
+    <Content Include="ChampBios\Gragas.txt" />
+    <Content Include="ChampBios\Graves.txt" />
+    <Content Include="ChampBios\Hecarim.txt" />
+    <Content Include="ChampBios\Heimerdinger.txt" />
+    <Content Include="ChampBios\Illaoi.txt" />
+    <Content Include="ChampBios\Irelia.txt" />
+    <Content Include="ChampBios\Ivern.txt" />
+    <Content Include="ChampBios\Janna.txt" />
+    <Content Include="ChampBios\Jarvan IV.txt" />
+    <Content Include="ChampBios\Jax.txt" />
+    <Content Include="ChampBios\Jayce.txt" />
+    <Content Include="ChampBios\Jhin.txt" />
+    <Content Include="ChampBios\Jinx.txt" />
+    <Content Include="ChampBios\Kai%27Sa.txt" />
+    <Content Include="ChampBios\Kalista.txt" />
+    <Content Include="ChampBios\Karma.txt" />
+    <Content Include="ChampBios\Karthus.txt" />
+    <Content Include="ChampBios\Kassadin.txt" />
+    <Content Include="ChampBios\Katarina.txt" />
+    <Content Include="ChampBios\Kayle.txt" />
+    <Content Include="ChampBios\Kayn.txt" />
+    <Content Include="ChampBios\Kennen.txt" />
+    <Content Include="ChampBios\Kha%27Zix.txt" />
+    <Content Include="ChampBios\Kindred.txt" />
+    <Content Include="ChampBios\Kled.txt" />
+    <Content Include="ChampBios\Kog%27Maw.txt" />
+    <Content Include="ChampBios\Leblanc.txt" />
+    <Content Include="ChampBios\Lee Sin.txt" />
+    <Content Include="ChampBios\Leona.txt" />
+    <Content Include="ChampBios\Lissandra.txt" />
+    <Content Include="ChampBios\Lucian.txt" />
+    <Content Include="ChampBios\Lulu.txt" />
+    <Content Include="ChampBios\Lux.txt" />
+    <Content Include="ChampBios\Malphite.txt" />
+    <Content Include="ChampBios\Malzahar.txt" />
+    <Content Include="ChampBios\Maokai.txt" />
+    <Content Include="ChampBios\Master Yi.txt" />
+    <Content Include="ChampBios\Miss Fortune.txt" />
+    <Content Include="ChampBios\Mordekaiser.txt" />
+    <Content Include="ChampBios\Morgana.txt" />
+    <Content Include="ChampBios\Nami.txt" />
+    <Content Include="ChampBios\Nasus.txt" />
+    <Content Include="ChampBios\Nautilus.txt" />
+    <Content Include="ChampBios\Neeko.txt" />
+    <Content Include="ChampBios\Nidalee.txt" />
+    <Content Include="ChampBios\Nocturne.txt" />
+    <Content Include="ChampBios\Nunu.txt" />
+    <Content Include="ChampBios\Olaf.txt" />
+    <Content Include="ChampBios\Orianna.txt" />
+    <Content Include="ChampBios\Ornn.txt" />
+    <Content Include="ChampBios\Pantheon.txt" />
+    <Content Include="ChampBios\Poppy.txt" />
+    <Content Include="ChampBios\Pyke.txt" />
+    <Content Include="ChampBios\Qiyana.txt" />
+    <Content Include="ChampBios\Quinn.txt" />
+    <Content Include="ChampBios\Rakan.txt" />
+    <Content Include="ChampBios\Rammus.txt" />
+    <Content Include="ChampBios\Rek%27Sai.txt" />
+    <Content Include="ChampBios\Renekton.txt" />
+    <Content Include="ChampBios\Rengar.txt" />
+    <Content Include="ChampBios\Riven.txt" />
+    <Content Include="ChampBios\Rumble.txt" />
+    <Content Include="ChampBios\Ryze.txt" />
+    <Content Include="ChampBios\Sejuani.txt" />
+    <Content Include="ChampBios\Shaco.txt" />
+    <Content Include="ChampBios\Shen.txt" />
+    <Content Include="ChampBios\Shyvana.txt" />
+    <Content Include="ChampBios\Singed.txt" />
+    <Content Include="ChampBios\Sion.txt" />
+    <Content Include="ChampBios\Sivir.txt" />
+    <Content Include="ChampBios\Skarner.txt" />
+    <Content Include="ChampBios\Sona.txt" />
+    <Content Include="ChampBios\Soraka.txt" />
+    <Content Include="ChampBios\Swain.txt" />
+    <Content Include="ChampBios\Sylas.txt" />
+    <Content Include="ChampBios\Syndra.txt" />
+    <Content Include="ChampBios\Tahm Kench.txt" />
+    <Content Include="ChampBios\Taliyah.txt" />
+    <Content Include="ChampBios\Talon.txt" />
+    <Content Include="ChampBios\Taric.txt" />
+    <Content Include="ChampBios\Teemo.txt" />
+    <Content Include="ChampBios\Thresh.txt" />
+    <Content Include="ChampBios\Tristana.txt" />
+    <Content Include="ChampBios\Trundle.txt" />
+    <Content Include="ChampBios\Tryndamere.txt" />
+    <Content Include="ChampBios\Twisted Fate.txt" />
+    <Content Include="ChampBios\Twitch.txt" />
+    <Content Include="ChampBios\Udyr.txt" />
+    <Content Include="ChampBios\Urgot.txt" />
+    <Content Include="ChampBios\Varus.txt" />
+    <Content Include="ChampBios\Vayne.txt" />
+    <Content Include="ChampBios\Veigar.txt" />
+    <Content Include="ChampBios\Vel%27Koz.txt" />
+    <Content Include="ChampBios\VI.txt" />
+    <Content Include="ChampBios\Viktor.txt" />
+    <Content Include="ChampBios\Vladimir.txt" />
+    <Content Include="ChampBios\Volibear.txt" />
+    <Content Include="ChampBios\Warwick.txt" />
+    <Content Include="ChampBios\Wukong.txt" />
+    <Content Include="ChampBios\Xayah.txt" />
+    <Content Include="ChampBios\Xerath.txt" />
+    <Content Include="ChampBios\Xin Zhao.txt" />
+    <Content Include="ChampBios\Yasuo.txt" />
+    <Content Include="ChampBios\Yorick.txt" />
+    <Content Include="ChampBios\Yuumi.txt" />
+    <Content Include="ChampBios\Zac.txt" />
+    <Content Include="ChampBios\Zed.txt" />
+    <Content Include="ChampBios\Ziggs.txt" />
+    <Content Include="ChampBios\Zilean.txt" />
+    <Content Include="ChampBios\Zoe.txt" />
+    <Content Include="ChampBios\Zyra.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

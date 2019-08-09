@@ -1,10 +1,10 @@
-﻿using System;
+﻿using Discord;
+using Discord.Commands;
+using System;
 using System.Linq;
 using System.Threading.Tasks;
-using Discord;
-using Discord.Commands;
 
-namespace WhalesFargo.Modules
+namespace WhalesFargo
 {
     /**
      * HelpModule
@@ -59,7 +59,7 @@ namespace WhalesFargo.Modules
             if (emb.Fields.Count <= 0) // Added error checking in case we don't have summary tags yet.
                 await ReplyAsync("Module information cannot be found, please try again later.");
             else
-                await ReplyAsync("", false, emb);
+                await ReplyAsync("", false, emb.Build());
         }
 
         [Command("help", RunMode = RunMode.Async)] // TODO: Change this once all summaries are added.
@@ -82,7 +82,7 @@ namespace WhalesFargo.Modules
             var commands = module.Commands.Where(x => !string.IsNullOrWhiteSpace(x.Summary)).GroupBy(x => x.Name).Select(x => x.First());
 
             // If none of them have summaries or don't exist, return.
-            if (!commands.Any())
+            if (commands.Count() == 0)
             {
                 await ReplyAsync($"The module `{module.Name}` has no available commands.");
                 return;
@@ -97,15 +97,17 @@ namespace WhalesFargo.Modules
                 var result = await command.CheckPreconditionsAsync(Context, m_Provider);
                 if (result.IsSuccess)
                 {
-                    var title = (m_UseRemarks) ? command.Remarks : command.Aliases.First();
-                    emb.AddField(title, command.Summary);
+                    if (m_UseRemarks)
+                        emb.AddField(command.Remarks, command.Summary);
+                    else
+                        emb.AddField(command.Aliases.First(), command.Summary);
                 }
             }
 
             if (emb.Fields.Count <= 0) // Added error checking in case we don't have summary tags yet.
                 await ReplyAsync("Command information cannot be found, please try again later.");
             else
-                await ReplyAsync("", false, emb);
+                await ReplyAsync("", false, emb.Build());
         }
 
     }
