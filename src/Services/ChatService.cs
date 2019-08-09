@@ -69,7 +69,7 @@ namespace WhalesFargo
         */
         public void SubNums(int num1, int num2)
         {
-            DiscordReply("" + (num1 + num2));
+            DiscordReply("" + (num1 - num2));
         }
 
         /*
@@ -82,6 +82,14 @@ namespace WhalesFargo
         public void Bio(string name)
         {
             string bioString = "";
+            if (name.ToLower().Equals("jarvan"))
+            {
+                name = "Jarvan IV";
+            }
+            else if (name.ToLower().Equals("nunu&willump") || name.ToLower().Equals("nunu & willump"))
+            {
+                name = "Nunu";
+            }
             try
             {
                 bioString = File.ReadAllText((name + ".txt"));
@@ -89,10 +97,7 @@ namespace WhalesFargo
             {
                 bioString = "Unable to find that bio.";
             }
-            if (bioString.ToLower().Equals("jarvan"))
-            {
-                bioString = "Jarvan IV";
-            }
+            
             DiscordReply(bioString);
         }
 
@@ -105,7 +110,7 @@ namespace WhalesFargo
         */
         public void MultNums(int num1, int num2)
         {
-            DiscordReply("" + (num1 + num2));
+            DiscordReply("" + (num1 * num2));
         }
 
         /*
@@ -117,7 +122,7 @@ namespace WhalesFargo
         */
         public void DivNums(int num1, int num2)
         {
-            DiscordReply("" + (num1 + num2));
+            DiscordReply("" + (num1 / num2));
         }
 
         /*
@@ -225,5 +230,4 @@ namespace WhalesFargo
             await channel.SendMessageAsync(user.Mention + " has been unmuted.");
         }
     }
-
 }

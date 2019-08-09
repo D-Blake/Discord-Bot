@@ -379,5 +379,6 @@
     <Content Include="ChampBios\Zoe.txt" />
     <Content Include="ChampBios\Zyra.txt" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
